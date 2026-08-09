@@ -1,0 +1,247 @@
+{
+  "version": "1.0.0",
+  "case": "scabies",
+  "title": "Arun — Itchy Rash",
+  "patientName": "Arun",
+  "voice": "puck",
+  "expectation": {
+    "diagnosis": "Scabies",
+    "management": "Permethrin 5% cream applied neck-to-toe, repeated in one week; treatment of the roommate and laundering of shared bedding; itch can persist for weeks after cure.",
+    "distractors": ["Eczema", "Ringworm (Tinea Corporis)", "Contact Dermatitis"]
+  },
+  "characters": {
+    "P": {
+      "id": "P",
+      "name": "Arun",
+      "fullName": "Arun",
+      "role": "Hostel student, 19",
+      "kind": "patient",
+      "startNode": true,
+      "voice": "puck",
+      "color": "#e9c46a",
+      "avatarBg": "linear-gradient(135deg,#5c4a1a,#e9c46a)",
+      "publicProfile": "Male, 19, first-year student living in the university hostel. Presents with an intensely itchy rash between his fingers and wrists that is much worse at night and has been troubling him for about three weeks.",
+      "secret": "Embarrassed to say his roommate has the same itch; he shares bedding. He has been scratching so much that his skin is raw in places.",
+      "topics": [
+        "How long have you had this rash?",
+        "Tell me about the itching.",
+        "Where exactly is the rash?",
+        "Can you share your skin region image?"
+      ]
+    },
+    "F": {
+      "id": "F",
+      "name": "Rohit",
+      "fullName": "Rohit (roommate)",
+      "role": "Arun's hostel roommate",
+      "kind": "family",
+      "voice": "aoede",
+      "color": "#e76f51",
+      "avatarBg": "linear-gradient(135deg,#5c2a1a,#e76f51)",
+      "secret": "Rohit has been itching too for the past two weeks. They share a bed-quilt and often trade clothes.",
+      "topics": [
+        "Have you been itching as well?",
+        "Do you share bedding or clothes?",
+        "When did your itching start?",
+        "Has anyone at home been affected?"
+      ]
+    },
+    "R": {
+      "id": "R",
+      "name": "Sister Aagya",
+      "fullName": "Sister Aagya",
+      "role": "Nurse & data analyst",
+      "kind": "records",
+      "voice": "zephyr",
+      "color": "#4488ff",
+      "avatarBg": "linear-gradient(135deg,#1a3a5c,#4488ff)",
+      "secret": "The hostel health room logged Arun's itch complaint two weeks ago. The file shows no prior eczema or allergic history.",
+      "topics": [
+        "What does the health room record say?",
+        "Was there any past skin condition?",
+        "When was this complaint logged?",
+        "Were any medicines prescribed before?"
+      ]
+    }
+  },
+  "regions": {
+    "skin": {
+      "label": "Interdigital skin — clinical photograph",
+      "caption": "Interdigital skin photograph — shared by the patient",
+      "imageUrl": "assets/scabies_burrow.jpg",
+      "keywords": ["skin", "rash", "fingers", "finger", "burrow", "between the fingers", "web space", "region image", "lesion"],
+      "findingKeywords": ["burrow", "mite", "scabies", "linear", "line", "groove"],
+      "finding": "Fine wavy burrows in the finger web spaces with excoriations — the classic appearance of scabies.",
+      "patientReaction": "\"Those little lines between my fingers itch the worst, doctor.\"",
+      "hint": "Doctor, you can see it on my hands — the rash between my fingers is the worst of it. I can show you.",
+      "unlocksClue": "scabies_visual"
+    }
+  },
+  "syntheticReports": [
+    {
+      "id": "koh_lab_report",
+      "label": "Skin Scraping Report (KOH)",
+      "caption": "Skin scraping report — from the hostel health-room referral",
+      "keywords": ["scraping", "koh", "skin test", "microscopy", "lab", "smear"],
+      "lines": [
+        "SKIN SCRAPING REPORT (KOH PREP)",
+        "Patient: Arun, 19M  |  Site: finger web space, right hand",
+        "Microscopy: Sarcoptes scabiei mite fragments and eggs seen.",
+        "Burrow contents positive for mites.",
+        "Impression: Scabies infestation confirmed microscopically."
+      ],
+      "finding": "Skin scraping: Sarcoptes scabiei mite fragments and eggs seen on KOH prep — scabies confirmed.",
+      "patientReaction": "\"They scraped a bit of skin and said they found a tiny bug.\"",
+      "hint": "They did a KOH test at the hostel health-room, doctor — I have the report with me. You can see it.",
+      "unlocksClue": "koh_prep"
+    }
+  ],
+  "clues": [
+    {
+      "id": "itchy_rash",
+      "character": "P",
+      "index": 0,
+      "difficulty": "easy",
+      "label": "Intensely itchy rash",
+      "shortText": "Intensely itchy rash for ~3 weeks, far worse at night.",
+      "longText": "Arun has had an intensely itchy rash for about three weeks. It keeps him awake at night — the itching is far worse then.",
+      "dependencies": [],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "finger_webs",
+      "character": "P",
+      "index": 1,
+      "difficulty": "easy",
+      "label": "Rash between fingers",
+      "shortText": "Rash concentrated between the fingers and on the wrists.",
+      "longText": "The rash is worst between his fingers and on the inner wrists, with a few spots around the waist.",
+      "dependencies": [],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "hostel_note",
+      "character": "R",
+      "index": 0,
+      "difficulty": "easy",
+      "label": "Health room logged itch",
+      "shortText": "Hostel health room logged the itch complaint 2 weeks ago.",
+      "longText": "The hostel health room note records that Arun came in for itching two weeks ago and was given a calamine lotion that did not help.",
+      "dependencies": [],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "night_itch",
+      "character": "P",
+      "index": 2,
+      "difficulty": "medium",
+      "label": "Itch worse at night",
+      "shortText": "Itching peaks after lights out — keeps him from sleeping.",
+      "longText": "Arun's itching peaks at night once he is in bed; he has scratched until his skin is raw in places.",
+      "dependencies": ["itchy_rash"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "burrows_visible",
+      "character": "P",
+      "index": 3,
+      "difficulty": "medium",
+      "label": "Fine burrows on exam",
+      "shortText": "Fine wavy grey lines (burrows) in the finger web spaces.",
+      "longText": "On examination there are fine wavy grey burrows in the finger web spaces, with excoriations from scratching.",
+      "dependencies": ["finger_webs"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "roommate_itch",
+      "character": "F",
+      "index": 0,
+      "difficulty": "medium",
+      "label": "Roommate also itches",
+      "shortText": "Roommate Rohit has been itching for 2 weeks too.",
+      "longText": "Arun's roommate Rohit has been itching for about two weeks as well — which is why Arun finally came to the clinic.",
+      "dependencies": ["hostel_note"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "no_eczema_hx",
+      "character": "R",
+      "index": 1,
+      "difficulty": "medium",
+      "label": "No eczema history",
+      "shortText": "File shows no prior eczema or allergy history.",
+      "longText": "The health-room file contains no history of eczema, asthma or allergy in Arun — his skin was previously clear.",
+      "dependencies": ["hostel_note"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "scratching_wounds",
+      "character": "P",
+      "index": 4,
+      "difficulty": "medium",
+      "label": "Excoriations from scratching",
+      "shortText": "Raw, excoriated skin from repeated scratching.",
+      "longText": "Arun shows raw, excoriated patches where he has scratched, mostly over the wrists and finger webs.",
+      "dependencies": ["burrows_visible", "night_itch"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "spread_bedding",
+      "character": "F",
+      "index": 1,
+      "difficulty": "hard",
+      "label": "Shared bedding/clothes",
+      "shortText": "They share a quilt and trade clothes — the transmission route.",
+      "longText": "Rohit admits they share a bed-quilt and swap clothes, and the bedding has not been washed in weeks — the likely route the mite spread.",
+      "dependencies": ["roommate_itch"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "scabies_visual",
+      "character": "P",
+      "index": 5,
+      "difficulty": "very_hard",
+      "label": "Skin photo: burrows",
+      "shortText": "Clinical photo confirms burrows between the fingers.",
+      "longText": "The clinical photograph of the finger web spaces shows the fine wavy burrows of scabies with surrounding excoriation.",
+      "dependencies": ["finger_webs", "night_itch"],
+      "pillar": "A",
+      "gameEnd": false,
+      "regionKey": "skin"
+    },
+    {
+      "id": "koh_prep",
+      "character": "R",
+      "index": 2,
+      "difficulty": "very_hard",
+      "label": "KOH scraping: mites",
+      "shortText": "Skin scraping shows Sarcoptes scabiei mites and eggs.",
+      "longText": "The KOH skin scraping from a finger web burrow shows Sarcoptes scabiei mite fragments and eggs — microscopically confirmed scabies.",
+      "dependencies": ["scratching_wounds", "no_eczema_hx"],
+      "pillar": "B",
+      "gameEnd": false,
+      "syntheticReportId": "koh_lab_report"
+    },
+    {
+      "id": "diagnosis",
+      "character": "P",
+      "index": 6,
+      "difficulty": "very_hard",
+      "label": "DIAGNOSIS",
+      "shortText": "Scabies — correctly identified.",
+      "longText": "Scabies. Arun is started on permethrin cream and both he and Rohit are treated together; their bedding is washed. His relief is immediate once the night itching finally stops.",
+      "dependencies": ["scabies_visual", "koh_prep"],
+      "pillar": null,
+      "gameEnd": true
+    }
+  ]
+}

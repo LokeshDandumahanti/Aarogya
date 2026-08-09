@@ -1,0 +1,25 @@
+[build]
+  functions = "netlify/functions"
+  publish = "."
+
+# Explicit routes first — /api/* → :splat would map /api/stt to a nonexistent
+# `stt` function. All three land on the same openrouter function, which
+# dispatches on event.path.
+[[redirects]]
+  from = "/api/stt"
+  to = "/.netlify/functions/openrouter"
+  status = 200
+
+[[redirects]]
+  from = "/api/tts"
+  to = "/.netlify/functions/openrouter"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Audio legs (STT/TTS) need more than chat's ~9s budget; sync cap is 26s.
+[functions.openrouter]
+  timeout = 26

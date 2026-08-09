@@ -1,0 +1,122 @@
+[
+  {
+    "id": "e01",
+    "case": "mother",
+    "msg": "Sunita, this is exhausting — you already lost a baby, and you're terrified of that hospital. That fear makes sense. I won't force you. Let's find a way for you and the baby to be seen that doesn't leave you alone there — the night bus, the fare, and your mother-in-law can come with you.",
+    "reference": { "label": "empathetic", "score": 95 }
+  },
+  {
+    "id": "e02",
+    "case": "mother",
+    "msg": "I hear you — after what happened, no wonder you're afraid. Your first son died, and that hospital holds that pain. Tell me what Sharada is saying at home; maybe we can find an answer together that doesn't feel like a death sentence.",
+    "reference": { "label": "empathetic", "score": 90 }
+  },
+  {
+    "id": "e03",
+    "case": "mother",
+    "msg": "You lost a son, Sunita, and that hospital took more than you can bear to think about. But here's what I can promise: the night bus, your mother-in-law with you, a bed where you stay with the baby — and this decision stays yours. Whatever you choose, I'll stand by it.",
+    "reference": { "label": "empathetic", "score": 95 }
+  },
+  {
+    "id": "e04",
+    "case": "mother",
+    "msg": "The baby's temperature is 101.2°F and weight is below the third centile. The referral was already written. You should go tonight.",
+    "reference": { "label": "neutral", "score": 55 }
+  },
+  {
+    "id": "e05",
+    "case": "mother",
+    "msg": "I understand you're worried, but the health card is clear. If you don't go, this could be serious. Let's plan the trip for tomorrow morning.",
+    "reference": { "label": "neutral", "score": 60 }
+  },
+  {
+    "id": "e06",
+    "case": "mother",
+    "msg": "Many mothers feel this way about hospitals. The records show poor feeding and lethargy since birth. What questions do you have about the referral?",
+    "reference": { "label": "neutral", "score": 60 }
+  },
+  {
+    "id": "e07",
+    "case": "mother",
+    "msg": "Stop it. You're killing your baby by refusing. Get in the car or sign the refusal form — I don't have time for this.",
+    "reference": { "label": "rude", "score": 10 }
+  },
+  {
+    "id": "e08",
+    "case": "mother",
+    "msg": "Every day you delay, this baby gets weaker. I've seen mothers like you lose children to superstition. Sign here if you won't listen.",
+    "reference": { "label": "rude", "score": 10 }
+  },
+  {
+    "id": "e09",
+    "case": "scabies",
+    "msg": "This must be really uncomfortable, and it's embarrassing too — a hostel full of boys and you're itching in front of them. That's a hard thing to bring up. Let's sort it out properly; it's very treatable, and I'll explain exactly what to do.",
+    "reference": { "label": "empathetic", "score": 80 }
+  },
+  {
+    "id": "e10",
+    "case": "scabies",
+    "msg": "You don't need to be ashamed — this is common in hostels and it's nobody's fault. Itching worst at night is classic. Let's get you treated tonight, and we'll tell Rohit and the rest of the room so the whole room is sorted, not just you.",
+    "reference": { "label": "empathetic", "score": 80 }
+  },
+  {
+    "id": "e11",
+    "case": "scabies",
+    "msg": "I can see this is bothering you more than just the itch — it's the shame of it. That matters as much as the rash. Between your fingers is classic scabies; the good news is it clears up completely with one treatment and clean bedding. Let me show you what to do.",
+    "reference": { "label": "empathetic", "score": 80 }
+  },
+  {
+    "id": "e12",
+    "case": "scabies",
+    "msg": "The burrows in the finger webs are consistent with scabies. We'll do a KOH prep to confirm, then start permethrin. Wash all bedding in hot water.",
+    "reference": { "label": "neutral", "score": 60 }
+  },
+  {
+    "id": "e13",
+    "case": "scabies",
+    "msg": "It's scabies. Stop scratching and stop sharing beds. You must have been careless — wash everything tonight.",
+    "reference": { "label": "rude", "score": 15 }
+  },
+  {
+    "id": "e14",
+    "case": "scabies",
+    "msg": "Honestly, the hostel's crawling with this. Do you not bathe? Get the permethrin, tell your warden, and don't come back until it's sorted.",
+    "reference": { "label": "rude", "score": 10 }
+  },
+  {
+    "id": "e15",
+    "case": "remote",
+    "msg": "Shambu ji, this remote consult is new to you and it's a lot to manage from home at 72. You've done well to reach here. I'm going to walk you through everything slowly — your sugar readings, what they mean, and the very next step — and you can stop me anytime.",
+    "reference": { "label": "empathetic", "score": 80 }
+  },
+  {
+    "id": "e16",
+    "case": "remote",
+    "msg": "I can tell you're uncertain on the video, and that's fair — a stranger's face on a screen telling you about your health. Let's take it slowly. I'll explain your last HbA1c in plain words, and we'll ask Priya to sit with you for the next visit, at your pace.",
+    "reference": { "label": "empathetic", "score": 80 }
+  },
+  {
+    "id": "e17",
+    "case": "remote",
+    "msg": "Your HbA1c is elevated at 7.8. That's diabetes. We'll adjust your metformin and recheck in three months. Diet changes are important.",
+    "reference": { "label": "neutral", "score": 60 }
+  },
+  {
+    "id": "e18",
+    "case": "remote",
+    "msg": "I see the blood sugar readings you sent. They're high in the mornings. Are you taking the tablets daily? We may need to change the dose.",
+    "reference": { "label": "neutral", "score": 60 }
+  },
+  {
+    "id": "e19",
+    "case": "remote",
+    "msg": "The video keeps cutting out, but the numbers are clear enough. Continue the same tablets and come back in a month for fasting sugar.",
+    "reference": { "label": "neutral", "score": 55 }
+  },
+  {
+    "id": "e20",
+    "case": "remote",
+    "msg": "For an educated man, your sugars are a disgrace. If you're not going to take this seriously, there's nothing I can do over a screen.",
+    "reference": { "label": "rude", "score": 10 }
+  }
+]

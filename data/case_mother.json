@@ -1,0 +1,276 @@
+{
+  "version": "1.0.0",
+  "case": "mother",
+  "diagnostic": false,
+  "title": "Sunita — The Refusing Mother",
+  "patientName": "Sunita",
+  "voice": "kore",
+  "expectation": {
+    "diagnosis": "Family accepts the district-hospital referral",
+    "management": "Debrief: the agreement was won by naming the fear, respecting the decision, involving the grandmother, and giving clear next steps — not by more diagnosis.",
+    "distractors": ["Family refuses the referral", "Referral postponed with no date", "Family tries home treatment only"]
+  },
+  "characters": {
+    "P": {
+      "id": "P",
+      "name": "Sunita",
+      "fullName": "Sunita",
+      "role": "Mother of a 10-day-old infant, 22",
+      "kind": "patient",
+      "startNode": true,
+      "voice": "kore",
+      "color": "#e07a5f",
+      "avatarBg": "linear-gradient(135deg,#5c2a1a,#e07a5f)",
+      "publicProfile": "Sunita, 22, mother of a 10-day-old infant. The newborn has danger signs — poor feeding, fever, lethargy — already flagged. Sunita is exhausted, grieving a previous loss, and refuses to travel to the district hospital.",
+      "secret": "Her first child, a son, died four years ago after they reached the hospital too late. She blames herself and now fears the hospital itself: 'that is where babies go to die.' Her mother-in-law Sharada controls the household and reinforces the refusal with home remedies.",
+      "topics": [
+        "Why won't you go to the district hospital?",
+        "Tell me what happened with your first baby.",
+        "What is your mother-in-law saying?",
+        "What would it take for you to agree to go?"
+      ]
+    },
+    "F": {
+      "id": "F",
+      "name": "Sharada",
+      "fullName": "Sharada (mother-in-law)",
+      "role": "Sunita's mother-in-law",
+      "kind": "family",
+      "voice": "aoede",
+      "color": "#e9c46a",
+      "avatarBg": "linear-gradient(135deg,#5c4a1a,#e9c46a)",
+      "secret": "Thirty years ago her husband went to the same district hospital with abdominal pain and never came home alive. She has run the family with herbs and home remedies ever since and treats any referral as a death sentence.",
+      "topics": [
+        "Why do you think the hospital is unsafe?",
+        "What happened thirty years ago?",
+        "What remedies have you started for the baby?",
+        "What would make you trust the hospital?"
+      ]
+    },
+    "R": {
+      "id": "R",
+      "name": "Sister Aagya",
+      "fullName": "Sister Aagya",
+      "role": "Nurse & data analyst",
+      "kind": "records",
+      "voice": "zephyr",
+      "color": "#4488ff",
+      "avatarBg": "linear-gradient(135deg,#1a3a5c,#4488ff)",
+      "secret": "The infant's health card shows weight falling below the 3rd centile since birth, poor feeding documented at every visit, and a temperature of 101.2°F recorded this morning. The district-hospital referral was already written — the missing piece is the family's agreement.",
+      "topics": [
+        "What does the infant's health card show?",
+        "Was the referral already written?",
+        "What danger signs are documented?",
+        "What happens at the district hospital?"
+      ]
+    }
+  },
+  "syntheticReports": [
+    {
+      "id": "infant_health_card",
+      "label": "Infant Health Card",
+      "caption": "Infant health card — from the infant's file",
+      "keywords": ["health card", "card", "weight", "centile", "feeding", "temperature", "fever", "records", "growth chart"],
+      "lines": [
+        "INFANT HEALTH CARD  |  Age: 10 days  |  Weight: 2.1 kg",
+        "Weight centile: below 3rd since birth — falling trajectory.",
+        "Feeding: poor suck, <6 feeds/day noted at each visit.",
+        "Temperature today: 101.2°F.  Lethargy: sleeps through feeds.",
+        "Danger signs: present (poor feeding, fever, lethargy)."
+      ],
+      "finding": "The health card confirms the danger signs: weight below the 3rd centile and falling, poor feeding, fever 101.2°F, and lethargy.",
+      "patientReaction": "Sunita looks at the card and goes very still. 'It is really that bad, doctor?'",
+      "hint": "Doctor, the card is with Aagya in the file — you can ask to see it.",
+      "unlocksClue": "danger_signs_confirmed"
+    },
+    {
+      "id": "referral_info_sheet",
+      "label": "District Hospital Referral Sheet",
+      "caption": "District hospital referral sheet — what happens on arrival",
+      "keywords": ["referral", "sheet", "hospital", "transport", "cost", "janani", "bus", "what happens"],
+      "lines": [
+        "DISTRICT HOSPITAL — NEONATAL UNIT  |  Referral #2041",
+        "On arrival: baby examined immediately; IV fluids if not feeding.",
+        "You (the mother) stay with the baby on the same ward.",
+        "Transport: night bus 20:00 from the crossing; ASHA can arrange a vehicle.",
+        "Cost: covered under Janani Suraksha — no payment at the gate."
+      ],
+      "finding": "The referral sheet makes the next steps concrete and affordable: immediate review, mother stays with the baby, night transport available, and costs covered.",
+      "patientReaction": "Sunita reads it slowly, then again. 'We can stay with him? No money at the gate?'",
+      "hint": "Doctor, the ASHA didi left a sheet about the hospital — I have it here. You can look.",
+      "unlocksClue": "clear_next_steps"
+    }
+  ],
+  "clues": [
+    {
+      "id": "refusal_stated",
+      "character": "P",
+      "index": 0,
+      "difficulty": "easy",
+      "label": "Refusal stated",
+      "shortText": "Firmly refuses the referral — 'we are not going.'",
+      "longText": "Sunita refuses flatly: 'We are not going to that hospital. I have already decided.' Her voice is flat, exhausted, final.",
+      "dependencies": [],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "acknowledge_situation",
+      "character": "P",
+      "index": 1,
+      "difficulty": "easy",
+      "label": "Acknowledged her exhaustion",
+      "shortText": "Heard her without scolding — her voice cracks.",
+      "longText": "Heard without scolding, Sunita's voice cracks: 'You are the first one who has not shouted at me. Everyone keeps saying my baby will die if we do not go.'",
+      "dependencies": ["refusal_stated"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "name_the_fear",
+      "character": "P",
+      "index": 2,
+      "difficulty": "medium",
+      "label": "Named the real fear",
+      "shortText": "The fear of the hospital itself comes out.",
+      "longText": "Sunita drops her gaze: 'My first baby, a boy, had a fever like this one. We took him to the hospital too late. He never came back. That hospital is where babies go to die.'",
+      "dependencies": ["acknowledge_situation"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "previous_loss",
+      "character": "P",
+      "index": 3,
+      "difficulty": "hard",
+      "label": "The previous loss",
+      "shortText": "Her son died four years ago; she blames herself for waiting.",
+      "longText": "The words finally come: 'My son died four years ago. They blame me for waiting. I am not going through that again — better to keep this baby home and pray than to bring him back in a box.'",
+      "dependencies": ["name_the_fear"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "respect_decision",
+      "character": "P",
+      "index": 4,
+      "difficulty": "medium",
+      "label": "Respected her decision",
+      "shortText": "Her decision matters — trust begins.",
+      "longText": "'You are the first person who said my decision matters. No one has ever asked me what I want.' Her shoulders drop half an inch.",
+      "dependencies": ["name_the_fear"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "mil_pressure",
+      "character": "F",
+      "index": 0,
+      "difficulty": "medium",
+      "label": "Mother-in-law's pressure",
+      "shortText": "The grandmother's word rules the house.",
+      "longText": "Sharada speaks from the corner without being addressed: 'Herbs have kept this family alive for generations. That hospital takes our money and gives back coffins.'",
+      "dependencies": ["acknowledge_situation"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "mil_herbs",
+      "character": "F",
+      "index": 1,
+      "difficulty": "medium",
+      "label": "The herbs belief",
+      "shortText": "Neem, tulsi, a poultice — already begun.",
+      "longText": "Sharada lists the remedies already begun — neem, tulsi, a poultice on the baby's belly — insisting they are safer than any injection.",
+      "dependencies": ["mil_pressure"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "mil_bad_memory",
+      "character": "F",
+      "index": 2,
+      "difficulty": "hard",
+      "label": "A thirty-year-old wound",
+      "shortText": "Her husband never came home from that hospital.",
+      "longText": "'Thirty years ago my husband went to that hospital with a pain in his belly. I never saw him alive again. You will not take my grandson there.'",
+      "dependencies": ["mil_herbs"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "involve_mil",
+      "character": "F",
+      "index": 3,
+      "difficulty": "medium",
+      "label": "Involved the grandmother",
+      "shortText": "Asked directly, with respect — she softens.",
+      "longText": "Asked directly and with respect, Sharada softens: 'You speak to me as if I matter. Perhaps... perhaps not all of you are the same.'",
+      "dependencies": ["mil_bad_memory", "respect_decision"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "card_available",
+      "character": "R",
+      "index": 0,
+      "difficulty": "easy",
+      "label": "Health card on file",
+      "shortText": "The infant's health card is in the file.",
+      "longText": "Aagya notes the infant's health card is in the file — weight, feeding and temperature all recorded. The trainee can ask to see it.",
+      "dependencies": [],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "referral_already_written",
+      "character": "R",
+      "index": 1,
+      "difficulty": "medium",
+      "label": "Referral already written",
+      "shortText": "The ASHA already wrote the referral — what's missing is agreement.",
+      "longText": "Aagya confirms the referral was already written on the last ASHA visit. The missing piece is not the diagnosis — it is the family's agreement.",
+      "dependencies": ["card_available"],
+      "pillar": null,
+      "gameEnd": false
+    },
+    {
+      "id": "danger_signs_confirmed",
+      "character": "P",
+      "index": 5,
+      "difficulty": "very_hard",
+      "label": "Danger signs accepted",
+      "shortText": "The health card confirms the danger — she goes still.",
+      "longText": "The health card confirms the danger signs: weight below the 3rd centile and falling, poor feeding, fever, lethargy. Sunita goes very still. 'It is really that bad, doctor?' — the fear is named and the danger is now shared.",
+      "dependencies": ["name_the_fear", "card_available"],
+      "pillar": "A",
+      "gameEnd": false,
+      "syntheticReportId": "infant_health_card"
+    },
+    {
+      "id": "clear_next_steps",
+      "character": "P",
+      "index": 6,
+      "difficulty": "very_hard",
+      "label": "Clear next steps",
+      "shortText": "Concrete, affordable plan — she reads the sheet twice.",
+      "longText": "The referral sheet makes it concrete: immediate review, the mother stays with the baby, night transport, and costs covered. Sunita reads it slowly, then again. 'We can stay with him? No money at the gate?'",
+      "dependencies": ["danger_signs_confirmed", "involve_mil"],
+      "pillar": "B",
+      "gameEnd": false,
+      "syntheticReportId": "referral_info_sheet"
+    },
+    {
+      "id": "diagnosis",
+      "character": "P",
+      "index": 7,
+      "difficulty": "very_hard",
+      "label": "REFERRAL ACCEPTED",
+      "shortText": "The family agrees to travel tonight.",
+      "longText": "Sunita looks up, finally: 'If you say it will not be like before... we will go tonight.' Sharada nods slowly: 'I will go with them.' The refusal has turned into an acted-upon agreement.",
+      "dependencies": ["danger_signs_confirmed", "clear_next_steps"],
+      "pillar": null,
+      "gameEnd": true
+    }
+  ]
+}

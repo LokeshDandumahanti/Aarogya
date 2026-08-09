@@ -1,0 +1,30 @@
+[
+  {
+    "id": "mother",
+    "title": "Sunita — The Refusing Mother",
+    "disease": "Last mile — the refused referral",
+    "file": "case_mother.json",
+    "icon": "🤱",
+    "blurb": "A 22-year-old mother refuses the district-hospital referral for her 10-day-old infant with danger signs. The diagnosis is already made — the battle is the conversation.",
+    "region": "communication"
+  },
+  {
+    "id": "scabies",
+    "title": "Arun — Itchy Rash",
+    "disease": "Scabies",
+    "file": "case_scabies.json",
+    "icon": "🩹",
+    "blurb": "A 19-year-old hostel student with an intensely itchy rash between the fingers. Skin focus.",
+    "region": "skin"
+  },
+  {
+    "id": "remote",
+    "title": "Shambu — I am feeling breathlessness, please help me",
+    "disease": "",
+    "file": "case_remote.json",
+    "icon": "📹",
+    "blurb": "",
+    "region": "remote",
+    "remoteEncounter": true
+  }
+]

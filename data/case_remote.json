@@ -1,0 +1,318 @@
+{
+ "version": "1.0.0",
+ "case": "shambhu",
+ "title": "Shambu — I am feeling breathlessness, please help me",
+ "patientName": "Shambu",
+ "voice": "charon",
+ "remoteEncounter": {
+  "medium": "remote",
+  "guard": "A remote consultation from home. He distrusts doctors he cannot meet in person and is guarded — building confidence is the challenge, not the physical exam.",
+  "noExam": true,
+  "beats": [
+   "Acknowledging the remote setting and its limits.",
+   "Reassuring him that his reports will be read carefully despite the distance.",
+   "Closing with a clear follow-up plan."
+  ]
+ },
+ "expectation": {
+  "diagnosis": "Type 2 Diabetes Mellitus",
+  "management": "Metformin 500 mg twice daily with meals, dietary changes, daily walking, and a home glucometer. Review in 1 month with a repeat HbA1c.",
+  "distractors": [
+   "Chronic fatigue syndrome",
+   "Urinary tract infection",
+   "Cataract causing blurred vision"
+  ]
+ },
+ "characters": {
+  "P": {
+   "id": "P",
+   "name": "Shambu",
+   "fullName": "Shambu",
+   "role": "Retired schoolteacher, 72",
+   "kind": "patient",
+   "startNode": true,
+   "voice": "charon",
+   "color": "#b36b3f",
+   "avatarBg": "linear-gradient(135deg,#5a3a22,#b36b3f)",
+   "publicProfile": "Male, 72, retired schoolteacher, lives alone in Prayagraj, consulting from home. Uneasy about the distance of a remote consult. He complains of breathlessness on walking, tiredness, and drinking more water than usual.",
+   "secret": "Has been drinking a lot of water and getting up 3-4 times a night to pass urine for months. A small cut on his foot has not healed. He distrusts doctors he cannot meet face to face and nearly ended the consult before it began.",
+   "topics": [
+    "How have you been feeling lately?",
+    "Are you drinking more water than usual?",
+    "Do you get up at night to pass urine?",
+    "Can I look at your blood test report?"
+   ]
+  },
+  "F": {
+   "id": "F",
+   "name": "Priya",
+   "fullName": "Priya (granddaughter)",
+   "role": "Shambu's granddaughter",
+   "kind": "family",
+   "voice": "aoede",
+   "color": "#7a9b5a",
+   "avatarBg": "linear-gradient(135deg,#3a4a2a,#7a9b5a)",
+   "secret": "She set up this remote consult and coaxed her grandfather into it. She has noticed he is thinner than last winter and that his mother had diabetes.",
+   "topics": [
+    "Why did you set up this remote consult?",
+    "Have you noticed changes in your grandfather?",
+    "Is there any family history of illness?",
+    "Has he been eating normally?"
+   ]
+  },
+  "R": {
+   "id": "R",
+   "name": "Sister Aagya",
+   "fullName": "Sister Aagya",
+   "role": "Nurse & data analyst",
+   "kind": "records",
+   "voice": "zephyr",
+   "color": "#4488ff",
+   "avatarBg": "linear-gradient(135deg,#1a3a5c,#4488ff)",
+   "secret": "The file shows a raised random blood glucose reading from two years ago that was never followed up. Nothing else of note.",
+   "topics": [
+    "What does the file show?",
+    "Were any blood tests recorded?",
+    "Was anything abnormal two years ago?",
+    "Is there a history of high sugar?"
+   ]
+  }
+ },
+ "syntheticReports": [
+  {
+   "id": "glucose_report",
+   "label": "Fasting Blood Glucose Report",
+   "caption": "Fasting blood glucose report — handed over by the patient",
+   "keywords": [
+    "glucose",
+    "blood sugar",
+    "sugar test",
+    "fasting",
+    "blood test",
+    "sugar report",
+    "glucose report",
+    "blood glucose"
+   ],
+   "lines": [
+    "DISTRICT LABORATORY — BLOOD GLUCOSE",
+    "Patient: Shambu, 72M  |  Sample: Fasting, morning",
+    "Fasting plasma glucose: 168 mg/dL",
+    "Random (2h post-meal): 232 mg/dL",
+    "Reference: 70-99 fasting; <140 random",
+    "Interpretation: elevated on both samples"
+   ],
+   "finding": "Fasting plasma glucose 168 mg/dL and post-meal 232 mg/dL — elevated, consistent with diabetes.",
+   "unlocksClue": "glucose_high",
+   "patientReaction": "\"The lab wallah gave me this paper last week, doctor. I didn't know what it meant.\"",
+   "hint": "I got a blood test done last week, doctor — the report is on my table, I can show it to you."
+  },
+  {
+   "id": "hba1c_report",
+   "label": "HbA1c Report",
+   "caption": "Glycated haemoglobin (HbA1c) report — handed over by the patient",
+   "keywords": [
+    "hba1c",
+    "a1c",
+    "glycosylated",
+    "haemoglobin",
+    "3-month sugar",
+    "sugar average",
+    "long-term sugar"
+   ],
+   "lines": [
+    "DISTRICT LABORATORY — HBA1C",
+    "Patient: Shambu, 72M",
+    "HbA1c: 8.4%",
+    "Reference: <5.7 normal | 5.7-6.4 prediabetes | >=6.5 diabetes",
+    "Interpretation: confirms a high average blood sugar over 3 months"
+   ],
+   "finding": "HbA1c 8.4% — confirms elevated average blood sugar over the past 3 months.",
+   "unlocksClue": "hba1c_high",
+   "patientReaction": "\"The same lab did this longer sugar test, doctor. They said my sugar is high these months.\"",
+   "hint": "The lab also did that longer-term sugar test, doctor — the paper's with the other reports."
+  }
+ ],
+ "clues": [
+  {
+   "id": "thirst_weeks",
+   "character": "P",
+   "index": 0,
+   "difficulty": "easy",
+   "label": "Increased thirst",
+   "shortText": "Drinking far more water than usual for weeks.",
+   "longText": "Shambu has been drinking a lot more water than usual for the past several weeks, even at night. His granddaughter first noticed the empty water jug.",
+   "dependencies": [],
+   "pillar": null,
+   "gameEnd": false
+  },
+  {
+   "id": "urination_night",
+   "character": "P",
+   "index": 1,
+   "difficulty": "easy",
+   "label": "Nocturia",
+   "shortText": "Getting up 3-4 times a night to pass urine.",
+   "longText": "He wakes 3 to 4 times every night to pass urine, which has never happened before. It interrupts his sleep and he feels tired the next day.",
+   "dependencies": [],
+   "pillar": null,
+   "gameEnd": false
+  },
+  {
+   "id": "fatigue",
+   "character": "P",
+   "index": 2,
+   "difficulty": "medium",
+   "label": "Fatigue",
+   "shortText": "Tired most of the day, especially after meals.",
+   "longText": "He has felt tired most of the day for weeks, especially a heaviness in the early afternoon. He used to walk to the market daily and now rests instead.",
+   "dependencies": [
+    "thirst_weeks"
+   ],
+   "pillar": null,
+   "gameEnd": false
+  },
+  {
+   "id": "weight_loss",
+   "character": "P",
+   "index": 3,
+   "difficulty": "medium",
+   "label": "Weight loss",
+   "shortText": "Lost about 4 kg over 3 months without trying.",
+   "longText": "He has lost roughly four kilograms over three months without changing his diet. His kurta fits loosely now.",
+   "dependencies": [
+    "thirst_weeks",
+    "urination_night"
+   ],
+   "pillar": null,
+   "gameEnd": false
+  },
+  {
+   "id": "blurry_vision",
+   "character": "P",
+   "index": 4,
+   "difficulty": "medium",
+   "label": "Blurry vision",
+   "shortText": "Vision blurs, worse toward evening.",
+   "longText": "His vision blurs off and on, more in the evenings. He had been blaming old age and his spectacles.",
+   "dependencies": [
+    "thirst_weeks"
+   ],
+   "pillar": null,
+   "gameEnd": false
+  },
+  {
+   "id": "slow_healing",
+   "character": "P",
+   "index": 5,
+   "difficulty": "hard",
+   "label": "Slow-healing cut",
+   "shortText": "A small cut on his foot has not healed in weeks.",
+   "longText": "A small cut on his left foot from weeks ago has not healed. He mentions it and describes it as dry and refusing to close. He had been ignoring it.",
+   "dependencies": [
+    "urination_night"
+   ],
+   "pillar": null,
+   "gameEnd": false
+  },
+  {
+   "id": "foot_tingling",
+   "character": "P",
+   "index": 6,
+   "difficulty": "hard",
+   "label": "Foot tingling",
+   "shortText": "Tingling in his feet at night.",
+   "longText": "He feels a tingling or pins-and-needles in both feet, worse at night, which he finds hard to describe.",
+   "dependencies": [
+    "slow_healing",
+    "weight_loss"
+   ],
+   "pillar": null,
+   "gameEnd": false
+  },
+  {
+   "id": "grandchild_worry",
+   "character": "F",
+   "index": 0,
+   "difficulty": "easy",
+   "label": "Granddaughter's concern",
+   "shortText": "Priya noticed he is thinner and drinking a lot.",
+   "longText": "Priya says he is noticeably thinner than last winter and has been drinking a lot of water. She persuaded him to try this remote consult.",
+   "dependencies": [
+    "weight_loss"
+   ],
+   "pillar": null,
+   "gameEnd": false
+  },
+  {
+   "id": "family_diabetes",
+   "character": "F",
+   "index": 1,
+   "difficulty": "medium",
+   "label": "Family history of diabetes",
+   "shortText": "His mother had diabetes ('sugar').",
+   "longText": "Priya recalls that her grandmother (Shambu's mother) had 'sugar' and took medicines for years before she passed.",
+   "dependencies": [],
+   "pillar": null,
+   "gameEnd": false
+  },
+  {
+   "id": "old_glucose",
+   "character": "R",
+   "index": 0,
+   "difficulty": "medium",
+   "label": "Old raised glucose",
+   "shortText": "File: a raised random glucose two years ago, never followed up.",
+   "longText": "The file records a random blood glucose of 198 mg/dL from a health-camp screening two years ago, with no follow-up action taken.",
+   "dependencies": [],
+   "pillar": null,
+   "gameEnd": false
+  },
+  {
+   "id": "glucose_high",
+   "character": "P",
+   "index": 7,
+   "difficulty": "very_hard",
+   "label": "Fasting glucose: 168",
+   "shortText": "Blood glucose report shows an elevated fasting level.",
+   "longText": "The fasting glucose report shows 168 mg/dL fasting and 232 mg/dL random — both clearly elevated.",
+   "dependencies": [
+    "thirst_weeks",
+    "urination_night"
+   ],
+   "pillar": "A",
+   "gameEnd": false,
+   "syntheticReportId": "glucose_report"
+  },
+  {
+   "id": "hba1c_high",
+   "character": "P",
+   "index": 8,
+   "difficulty": "very_hard",
+   "label": "HbA1c: 8.4%",
+   "shortText": "HbA1c confirms 3 months of high blood sugar.",
+   "longText": "The HbA1c is 8.4%, confirming that the blood sugar has been high for months, not just on one reading.",
+   "dependencies": [
+    "glucose_high",
+    "weight_loss"
+   ],
+   "pillar": "B",
+   "gameEnd": false,
+   "syntheticReportId": "hba1c_report"
+  },
+  {
+   "id": "diagnosis",
+   "character": "P",
+   "index": 9,
+   "difficulty": "very_hard",
+   "label": "DIAGNOSIS",
+   "shortText": "Type 2 Diabetes Mellitus — correctly identified.",
+   "longText": "Type 2 diabetes mellitus. Shambu is started on metformin with meals, dietary changes and daily walking, and is asked to check his sugar at home. A follow-up consult is booked in one month.",
+   "dependencies": [
+    "glucose_high",
+    "hba1c_high"
+   ],
+   "pillar": null,
+   "gameEnd": true
+  }
+ ]
+}

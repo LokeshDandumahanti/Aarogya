@@ -1,0 +1,10 @@
+{
+  "name": "aarogya-v7",
+  "version": "7.0.0",
+  "private": true,
+  "description": "AAROGYA V7 — Ollama-front virtual patient trainer (local Gemma first, OpenRouter fallback)",
+  "type": "commonjs",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
