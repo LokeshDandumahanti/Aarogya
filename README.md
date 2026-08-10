@@ -1,4 +1,4 @@
-# AAROGYA - *Doctor's Copilot in the telemedicine era*
+# AAROGYA - *Doctor's Copilot in the telehealth era*
 
 
 ## *▶ Live demo - [https://aarogyachat.netlify.app/](https://aarogyachat.netlify.app/)*
