@@ -109,14 +109,7 @@ what the trainee learns is trustworthy, and the scoring is reproducible.
 Voice is a **first-class input** in the browser - and it is wired *around* the
 text engine, not instead of it.
 
-```
- your voice ──mic──▶ [in-browser VAD] ──WAV──▶ /api/stt (Whisper) ──▶ text
-                                                                        │
-   text ◀──Gemma text-to-text ◀──── the SAME pipeline as typing ◀───────┘
-   │
-   └──▶ /api/tts: director (adds [coughs] [hmm] [pauses]) ──▶ Gemini TTS ──▶ the
-        patient speaks back in their own voice preset
-```
+<img src="readme_imgs/9_flow" alt="Speech to Speech (STS) architecture" width="100%">
 
 - **Speak to the patient (🎙).** The mic captures audio; an in-browser VAD
   stops at end-of-speech; the clip is POSTed to `/api/stt`, where **Whisper
